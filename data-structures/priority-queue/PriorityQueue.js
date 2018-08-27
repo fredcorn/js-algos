@@ -11,10 +11,11 @@ class PriorityQueue {
     let curr = e
     let parent = this.heap[currParentIdx]
     while (currIdx !== currParentIdx && this.comparator(curr, parent) > 0) {
+      console.log('curr %s parent %s', curr, parent)
       this.heap[currIdx] = parent
       this.heap[currParentIdx] = curr
       currIdx = currParentIdx
-      currParentIdx = parseInt(currIdx / 2)
+      currParentIdx = parseInt((currIdx - 1) / 2)
       curr = this.heap[currIdx]
       parent = this.heap[currParentIdx]
     }
@@ -55,6 +56,10 @@ class PriorityQueue {
     }
 
     return res
+  }
+
+  empty () {
+    return this.heap.length === 0
   }
 }
 

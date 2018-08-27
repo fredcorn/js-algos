@@ -4,6 +4,7 @@
   "description": "Algorithms implemented using JavaScript",
   "main": "index.js",
   "scripts": {
+    "bn": "babel-node",
     "test": "jest"
   },
   "repository": {
